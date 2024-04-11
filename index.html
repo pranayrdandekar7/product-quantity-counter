@@ -56,6 +56,7 @@
             margin-left: 10px;
 
         }
+
         .final-price {
             display: block;
             margin-left: 0 auto;
@@ -122,6 +123,55 @@
 
         </div>
         <button class="btn">Buy Now</button>
+    </div>
+
+    <!-- javascript -->
+
+    <script>
+
+        // const increElement = document.getElementById("increment");
+        // const decreElement = document.getElementById("decrement");
+        const quantityPriceElement = document.getElementById("quantity-price")
+        const finalPriceElement = document.getElementById("final-price")
+
+        function increaseQuantity() {
+            const quantityElement = document.getElementById('quantity');
+
+            let quantityValue = parseInt(quantityElement.innerText);
+            // let priceQuantityValue = parseInt(quantityPriceElement.innerText);
+            if (quantityValue < 10) {
+                quantityElement.innerText = ++quantityValue;
+
+            }
+            else {
+                alert('Yoc can not add more than 10 items');
+
+            }
+            quantityPriceElement.innerText = `${quantityValue} X 1099`;
+            finalPriceElement.innerText = `Total : ${quantityValue * 1099}`;
+
+
+
+        }
+
+        function decreaseQuantity() {
+            const quantityElement = document.getElementById('quantity');
+            let quantityValue = parseInt(quantityElement.innerText);
+
+            if (quantityValue > 1) {
+                quantityElement.innerText = --quantityValue;
+            }
+            else {
+                alert('You can not add less than 1 items');
+            }
+            quantityPriceElement.innerText = `${quantityValue} X 1099`;
+            finalPriceElement.innerText = `Total : ${quantityValue * 1099}`;
+
+        }
+    </script>
+
+
+
 </body>
 
 </html>
